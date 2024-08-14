@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MFlix - Série</title>
+    <link rel="icon" href="C:\Users\Marques\Desktop\mlix\imagens da marca\FAVICON.ico" type="image/x-icon"> <!-- Favicon -->
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background: url('https://cinepop.com.br/wp-content/uploads/2024/05/bad-boys-ate-o-fim.webp') no-repeat center center fixed; /* Imagem de fundo */
+            background-size: cover; /* Ajusta a imagem para cobrir todo o fundo */
+            color: #e5e5e5;
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Sobreposição escura sem degradê */
+            z-index: 1;
+        }
+
+        header {
+            background-color: rgba(20, 20, 20, 0); /* Inicialmente transparente */
+            padding: 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease;
+            z-index: 2;
+			border-radius: 5px; /* Bordas arredondadas */
+        }
+
+        header img {
+            max-width: 150px; /* Ajuste conforme o tamanho da sua logo */
+            position: absolute;
+            left: 20px; /* Logo no canto esquerdo */
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 3;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            background-color: #e50914;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 1.2em;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #f40612;
+        }
+
+        main {
+            padding: 20px;
+            margin-top: 80px; /* Espaço para o cabeçalho fixo */
+            position: relative;
+            z-index: 2;
+            background: rgba(0, 0, 0, 0.7); /* Fundo um pouco mais escuro */
+            border-radius: 15px; /* Bordas arredondadas */
+            padding: 20px;
+            box-sizing: border-box; /* Garante que o padding não aumente a largura total */
+        }
+
+        .movie-details {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            flex-wrap: wrap; /* Permite a quebra de linha se necessário */
+        }
+
+        .movie-cover {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .movie-cover img {
+            width: 100%;
+            max-width: 400px; /* Tamanho da imagem da capa */
+            border-radius: 5px;
+        }
+
+        .movie-synopsis {
+            flex: 2;
+            color: #e5e5e5;
+            margin-right: 20px; /* Espaço entre a sinopse e o trailer */
+        }
+
+        .movie-synopsis p {
+            margin: 0;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        .watch-button {
+            margin-top: 20px;
+            display: inline-block;
+            background-color: #e50914;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .watch-button:hover {
+            background-color: #f40612;
+        }
+
+        .video-player {
+            flex: 1;
+            max-width: 660px; /* Ajusta o tamanho do trailer */
+            margin-top: 20px;
+        }
+
+        footer {
+            background-color: #000;
+            color: #888;
+            text-align: center;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            transition: opacity 1s ease;
+            opacity: 1;
+            z-index: 2;
+        }
+
+        footer.hidden {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay"></div> <!-- Sobreposição escura sem degradê -->
+
+    <header id="header">
+        <img src="C:\Users\Marques\Desktop\mlix\imagens da marca\MFlix-removebg-preview.png" alt="MFlix Logo"> <!-- Sua logo aqui -->
+        <nav>
+            <ul>
+                <li><a href="C:\Users\Marques\Desktop\mlix\index.html">Início</a></li>
+                <li><a href="C:\Users\Marques\Desktop\mlix\filmes\Categorias - Filmes.html">Filmes</a></li>
+                <li><a href="C:\Users\Marques\Desktop\mlix\séries\Categorias - Séries.html">Séries</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+	
+    <main>
+        <div class="movie-details">
+            <div class="movie-cover">
+                <img src="https://ingresso-a.akamaihd.net/prd/img/movie/bad-boys-ate-o-fim/fb790f8f-d201-49d4-b103-b3235c09c90f.webp" alt="Capa do Filme"> <!-- Imagem da capa do filme -->
+            </div>
+            <div class="movie-synopsis">
+                <h1>Bad Boys Até o Fim</h1>
+                <p>Quando um criminoso internacional ameaça a segurança global, Mike Lowrey e Marcus Burnett se veem de volta às ruas para mais uma missão. Enquanto enfrentam novos desafios e inimigos, eles também devem lidar com suas próprias questões pessoais e familiares. Em meio a explosões e perseguições, a amizade entre os dois é testada mais do que nunca.</p>
+                <a href="#" class="watch-button">Assistir Agora</a> <!-- Botão para o link do player do vídeo -->
+            </div>
+            <div class="video-player">
+                <!-- Substitua o src abaixo pelo link do trailer -->
+                <iframe width="660" height="515" src="https://www.youtube.com/embed/d7uEO2TsePk?si=omRy8z9wggeM1UIY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+    </main>
+
+    <footer id="footer">
+        <p>&copy; 2024 MFlix. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        // Esconde o rodapé após 1 segundo
+        setTimeout(() => {
+            document.getElementById('footer').classList.add('hidden');
+        }, 2000);
+
+        const header = document.getElementById('header');
+        let timeoutId;
+
+        // Função para tornar o cabeçalho transparente
+        function makeHeaderTransparent() {
+            header.style.backgroundColor = 'rgba(20, 20, 20, 0)';
+        }
+
+        // Função para restaurar o cabeçalho
+        function restoreHeader() {
+            header.style.backgroundColor = 'rgba(20, 20, 20, 1)';
+        }
+
+        // Torna o cabeçalho transparente após 8 segundos
+        setTimeout(makeHeaderTransparent, 8000);
+
+        // Restaura o cabeçalho ao passar o mouse sobre ele
+        header.addEventListener('mouseenter', restoreHeader);
+
+        // Torna o cabeçalho transparente novamente após 2 segundos sem o mouse
+        header.addEventListener('mouseleave', () => {
+            clearTimeout(timeoutId);
+            timeoutId = setTimeout(makeHeaderTransparent, 2000);
+        });
+    </script>
+</body>
+</html>
