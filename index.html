@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MFlix</title>
-    <link rel="icon" href="imagens da marca\FAVICON.ico" type="image/x-icon">
+    <link rel="icon" href="C:\Users\Marques\Desktop\mlix\imagens da marca\FAVICON.ico" type="image/x-icon">
     <style>
         body {
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+			background: url('C:/Users/Marques/Desktop/mlix/imagens da marca/fundo.jpg') no-repeat center center fixed; /* Imagem de fundo */
             background-color: #000;
             color: #e5e5e5;
             margin: 0;
@@ -116,10 +117,8 @@
         <nav>
             <ul>
                 <li><a href="index.html">Início</a></li>
-                <li><a href="filmes/Categorias - Filmes.html">Filmes</a></li>
-                <li><a href="séries/Categorias - Séries.html">Séries</a></li>
-                <li><a href="#">Sobre</a></li>
-                <li><a href="#">Contato</a></li>
+                <li><a href="C:\Users\Marques\Desktop\mlix\filmes\Categorias - Filmes.html">Filmes</a></li>
+                <li><a href="C:\Users\Marques\Desktop\mlix\séries\Categorias - Séries.html">Séries</a></li>
             </ul>
         </nav>
     </header>
@@ -149,9 +148,35 @@
             },
             {
                 title: "DeadPool & Wolverine",
-                poster: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgemNsuGXGzssXpc3lRWobyXO3z5tf9Ba8T-skpN9kWJL4XrOFCEEgMlxNsGcJcLq-l1vWM0XodSoqJ_Frf_22aumyrWs9z_C6YGrwxGt4W41yy7T59fEn3qHgJQ_MSIson4yjEIupuS2unb2fUXTdZb-kzu5k8hquCqCJTj51EptuJBNvJy1hW/s675/ggriegyxqaabizo.jpg",
-                url: "filmes/acao/deadpool_wolverine.html" // Caminho para a página do filme
+                poster: "capa",
+                url: ".." // Caminho para a página do filme
+            },
+			{
+                title: "Bad Boys Até o Fim",
+                poster: "capa",
+                url: ".." // Caminho para a página do filme
+            },
+			{
+                title: "Bad Boys Até o Fim",
+                poster: "capa",
+                url: ".." // Caminho para a página do filme
+            },
+            {
+                title: "DeadPool & Wolverine",
+                poster: "capa",
+                url: ".." // Caminho para a página do filme
+            },
+			{
+                title: "Bad Boys Até o Fim",
+                poster: "capa",
+                url: ".." // Caminho para a página do filme
+            },
+			{
+                title: "Bad Boys Até o Fim",
+                poster: "capa",
+                url: ".." // Caminho para a página do filme
             }
+			
         ];
         const moviesGrid = document.querySelectorAll('.movies-grid');
         moviesGrid.forEach(grid => {

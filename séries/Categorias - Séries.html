@@ -3,48 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MFlix - Categorias - Séries</title>
+    <title>MFlix</title>
     <link rel="icon" href="C:\Users\Marques\Desktop\mlix\imagens da marca\FAVICON.ico" type="image/x-icon">
     <style>
         body {
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+			background: url('C:/Users/Marques/Desktop/mlix/imagens da marca/fundo.jpg') no-repeat center center fixed; /* Imagem de fundo */
             background-color: #000;
             color: #e5e5e5;
             margin: 0;
             padding: 0;
         }
-        
-        h1 {
-            text-align: center;
-        }
-        
         header {
             background-color: #141414;
             padding: 20px 0;
             text-align: center;
             position: relative;
         }
-
-        header .logo {
+        header img.logo {
             position: absolute;
             left: 20px;
             top: 50%;
             transform: translateY(-50%);
             max-width: 150px; /* Ajuste o tamanho conforme necessário */
         }
-
         nav ul {
             list-style: none;
             padding: 0;
             margin: 10px 0;
             text-align: center;
         }
-
         nav ul li {
             display: inline;
             margin: 0 15px;
         }
-
         nav ul li a {
             color: #fff;
             background-color: #e50914; /* Fundo vermelho */
@@ -52,32 +44,27 @@
             text-decoration: none;
             font-size: 1.2em;
             border-radius: 5px;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
-
         nav ul li a:hover {
-            background-color: #000000; /* Tom mais claro ao passar o mouse */
+            background-color: #000;
         }
-
         main {
             padding: 20px;
         }
-
-        main h1 {
-            text-align: center;
-        }
-
+		main h1{ 
+			text-align: center;
+		
+		}
         main h2 {
             font-size: 2em;
             margin-bottom: 20px;
         }
-
         .movies-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             gap: 20px;
         }
-
         .movies-grid div {
             background-color: #222;
             padding: 10px;
@@ -86,24 +73,20 @@
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-
         .movies-grid div:hover {
             transform: scale(1.05);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
         }
-
         .movies-grid img {
             width: 100%;
             border-radius: 5px;
             margin-bottom: 10px;
         }
-
         .movies-grid h3 {
             font-size: 1.2em;
             margin-bottom: 10px;
             color: #fff;
         }
-
         .movies-grid a {
             display: inline-block;
             background-color: #e50914;
@@ -114,11 +97,9 @@
             font-size: 1em;
             transition: background-color 0.3s ease;
         }
-
         .movies-grid a:hover {
             background-color: #f40612;
         }
-
         footer {
             background-color: #000;
             color: #888;
@@ -127,72 +108,92 @@
             position: fixed;
             width: 100%;
             bottom: 0;
-            transition: opacity 1s ease-out, height 1s ease-out;
-            height: 60px; /* Altura original do rodapé */
+            transition: opacity 1s ease;
         }
-
         footer.hidden {
             opacity: 0;
-            height: 0;
-            overflow: hidden;
         }
     </style>
 </head>
 <body>
     <header>
-        <img src="C:\Users\Marques\Desktop\mlix\imagens da marca\MFlix-removebg-preview.png" alt="Logo" class="logo">
+        <img src="C:\Users\Marques\Desktop\mlix\imagens da marca\MFlix-removebg-preview.png" alt="MFlix Logo" class="logo">
         <nav>
             <ul>
                 <li><a href="C:\Users\Marques\Desktop\mlix\index.html">Início</a></li>
                 <li><a href="C:\Users\Marques\Desktop\mlix\filmes\Categorias - Filmes.html">Filmes</a></li>
                 <li><a href="Categorias - Séries.html">Séries</a></li>
-                <li><a href="#">Sobre</a></li>
-                <li><a href="#">Contato</a></li>
             </ul>
         </nav>
     </header>
-
     <main>
-        <h1>Categorias</h1>
-        <h2>Ação</h2>
+		<h1>Categorias - Séries</h1>
+        <h2>Lançamentos</h2>
         <div class="movies-grid">
-            <!-- Séries da categoria serão adicionadas aqui dinamicamente -->
+            <!-- Filmes da categoria serão adicionados aqui dinamicamente -->
+        </div>
+        <h2>Mais Vistos</h2>
+        <div class="movies-grid">
+            <!-- Filmes da categoria serão adicionados aqui dinamicamente -->
+        </div>
+        <h2>Família</h2>
+        <div class="movies-grid">
+            <!-- Filmes da categoria serão adicionados aqui dinamicamente -->
         </div>
     </main>
-
-    <footer>
+    <footer id="footer">
         <p>&copy; 2024 MFlix. Todos os direitos reservados.</p>
     </footer>
-
     <script>
-        // Adiciona séries dinamicamente
         const movies = [
             {
-                title: "Prison Break",
-                poster: "https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/17BCFC92C1DABCAEA7CBACB6FF6CAF8B36F387318EFC5A58C57ECE4A22DDF7B5/scale?width=506&amp;aspectRatio=2.00&amp;format=webp",
-                url: "https://redecanais.africa/bad-boys-ate-o-fim-dublado-2024-1080p_e9c30774d.html"
+                title: "Prison Break em Busca da Verdade",
+                poster: "https://image.tmdb.org/t/p/original/rK3Vwe0Wm0VXxf4IJCdlHeEREYx.jpg",
+                url: "C:/Users/Marques/Desktop/mlix/séries/Prison break/prison break.html" // Caminho para a página do filme
             },
             {
-                title: "Breaking Bad",
-                poster: "https://i.pinimg.com/originals/c2/c5/1d/c2c51de649689c4bd88be49fc447517e.jpg",
-                url: "link_para_o_filme2.mp4"
+                title: "DeadPool & Wolverine",
+                poster: "capa",
+                url: ".." // Caminho para a página do filme
+            },
+			{
+                title: "Bad Boys Até o Fim",
+                poster: "capa",
+                url: ".." // Caminho para a página do filme
+            },
+			{
+                title: "Bad Boys Até o Fim",
+                poster: "capa",
+                url: ".." // Caminho para a página do filme
+            },
+            {
+                title: "DeadPool & Wolverine",
+                poster: "capa",
+                url: ".." // Caminho para a página do filme
+            },
+			{
+                title: "Bad Boys Até o Fim",
+                poster: "capa",
+                url: ".." // Caminho para a página do filme
             }
+			
         ];
-
-        const moviesGrid = document.querySelector('.movies-grid');
-        movies.forEach(movie => {
-            const movieElement = document.createElement('div');
-            movieElement.innerHTML = `
-                <img src="${movie.poster}" alt="${movie.title}">
-                <h3>${movie.title}</h3>
-                <a href="${movie.url}" target="_blank">Assistir</a>
-            `;
-            moviesGrid.appendChild(movieElement);
+        const moviesGrid = document.querySelectorAll('.movies-grid');
+        moviesGrid.forEach(grid => {
+            movies.forEach(movie => {
+                const movieElement = document.createElement('div');
+                movieElement.innerHTML = `
+                    <img src="${movie.poster}" alt="${movie.title}">
+                    <h3>${movie.title}</h3>
+                    <a href="${movie.url}">Ver Detalhes</a> <!-- Link para a página do filme -->
+                `;
+                grid.appendChild(movieElement);
+            });
         });
 
-        // Oculta o rodapé com animação após 1 segundo
+        // Remove o rodapé após 1 segundo
         setTimeout(() => {
-            document.querySelector('footer').classList.add('hidden');
+            document.getElementById('footer').classList.add('hidden');
         }, 1000);
     </script>
 </body>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MFlix - Série</title>
+    <link rel="icon" href="C:\Users\Marques\Desktop\mlix\imagens da marca\FAVICON.ico" type="image/x-icon">
+    <style>
+        body{font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;background:url('https://stcotvfoco.com.br/2015/08/post17.jpg') no-repeat center center fixed;background-size:cover;color:#e5e5e5;margin:0;padding:0;position:relative;}
+        .overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:1;}
+        header{background-color:rgba(20,20,20,0);padding:20px;position:fixed;top:0;left:0;width:100%;display:flex;align-items:center;justify-content:center;transition:background-color 0.3s ease;z-index:2;border-radius:5px;}
+        header img{max-width:150px;position:absolute;left:20px;top:50%;transform:translateY(-50%);z-index:3;}
+        nav{display:flex;align-items:center;justify-content:center;flex-grow:1;}
+        nav ul{list-style:none;padding:0;margin:0;text-align:center;}
+        nav ul li{display:inline;margin:0 15px;}
+        nav ul li a{color:#fff;background-color:#e50914;padding:10px 20px;text-decoration:none;font-size:1.2em;border-radius:5px;transition:background-color 0.3s ease;}
+        nav ul li a:hover{background-color:#f40612;}
+        main{padding:20px;margin-top:80px;position:relative;z-index:2;background:rgba(0,0,0,0.7);border-radius:15px;padding:20px;box-sizing:border-box;}
+        .movie-details{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;}
+        .movie-cover{flex:1;margin-right:20px;}
+        .movie-cover img{width:100%;max-width:400px;border-radius:5px;}
+        .movie-synopsis{flex:2;color:#e5e5e5;margin-right:20px;}
+        .movie-synopsis p{margin:0;font-size:1.1em;line-height:1.6;}
+        .watch-button,.season-button,.episode-button{margin-top:20px;display:inline-block;background-color:#e50914;color:#fff;padding:10px 20px;text-decoration:none;border-radius:5px;font-size:1em;transition:background-color 0.3s ease;cursor:pointer;}
+        .watch-button:hover,.season-button:hover,.episode-button:hover{background-color:#f40612;}
+        .seasons-list,.episodes-list{display:none;margin-top:20px;}
+        .episode-item{display:flex;align-items:center;margin-bottom:10px;cursor:pointer;}
+        .episode-thumbnail img{width:100px;height:auto;border-radius:5px;}
+        .episode-details{margin-left:15px;flex-grow:1;}
+        .episode-title{font-size:1.1em;font-weight:bold;}
+        .episode-description{font-size:0.9em;}
+        footer{background-color:#000;color:#888;text-align:center;padding:20px 0;position:fixed;width:100%;bottom:0;transition:opacity 1s ease;opacity:1;z-index:2;}
+        footer.hidden{opacity:0;}
+        .popup-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);z-index:4;justify-content:center;align-items:center;}
+        .popup-content{background:#000;padding:20px;border-radius:10px;width:80%;max-width:800px;}
+        .popup-content video{width:100%;height:auto;border-radius:5px;}
+        .close-popup{background-color:#e50914;color:#fff;padding:10px;text-decoration:none;border-radius:5px;font-size:1em;transition:background-color 0.3s ease;cursor:pointer;text-align:center;margin-top:10px;}
+        .close-popup:hover{background-color:#f40612;}
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+    <header id="header">
+        <img src="C:\Users\Marques\Desktop\mlix\imagens da marca\MFlix-removebg-preview.png" alt="MFlix Logo">
+        <nav>
+            <ul>
+                <li><a href="C:\Users\Marques\Desktop\mlix\index.html">Início</a></li>
+                <li><a href="C:\Users\Marques\Desktop\mlix\filmes\Categorias - Filmes.html">Filmes</a></li>
+                <li><a href="C:\Users\Marques\Desktop\mlix\séries\Categorias - Séries.html">Séries</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="movie-details">
+            <div class="movie-cover">
+                <img src="https://image.tmdb.org/t/p/original/rK3Vwe0Wm0VXxf4IJCdlHeEREYx.jpg" alt="Capa do Filme">
+            </div>
+            <div class="movie-synopsis">
+                <h1>Prison Break - Em Busca da Verdade</h1>
+                <p>Quando Lincoln Burrows é condenado à morte por um crime que alega não ter cometido, seu irmão mais novo, Michael Scofield, arquiteta um plano engenhoso para libertá-lo da prisão. Michael, um engenheiro estrutural brilhante, deliberadamente se faz prender na penitenciária de Fox River, onde Lincoln está encarcerado. Lá dentro, ele precisa executar seu plano, que envolve não apenas enfrentar os desafios de sobreviver na prisão, mas também recrutar aliados inesperados, lidar com perigos constantes e descobrir uma conspiração muito maior do que jamais imaginou. Com o tempo se esgotando e o destino de Lincoln em jogo, Michael fará qualquer coisa para salvar seu irmão, mesmo que isso signifique colocar sua própria vida em risco.</p>
+                <div class="season-button" onclick="toggleSeasons()">Temporadas</div>
+                <div id="seasons-list" class="seasons-list">
+                    <div class="season-button" onclick="showEpisodes('season1')">1ª Temporada </div>
+                    <div class="season-button" onclick="showEpisodes('season2')">2ª Temporada </div>
+                </div>
+                <div id="episodes-list" class="episodes-list"></div>
+            </div>
+        </div>
+    </main>
+    <footer id="footer">
+        <p>&copy; 2024 MFlix. Todos os direitos reservados.</p>
+    </footer>
+    <div id="popup-overlay" class="popup-overlay">
+        <div class="popup-content">
+            <video controls>
+                <source src="" type="video/mp4" id="popup-video">
+                Seu navegador não suporta a tag de vídeo.
+            </video>
+            <div class="close-popup" onclick="closePopup()">Fechar</div>
+        </div>
+    </div>
+    <script>
+        setTimeout(()=>document.getElementById('footer').classList.add('hidden'),2000);
+        const header=document.getElementById('header');let timeoutId;
+        header.addEventListener('mouseover',()=>{
+            clearTimeout(timeoutId);
+            header.style.backgroundColor='rgba(20,20,20,0.8)';
+        });
+        header.addEventListener('mouseout',()=>{
+            timeoutId=setTimeout(()=>{
+                header.style.backgroundColor='rgba(20,20,20,0)';
+            },2000);
+        });
+        function toggleSeasons(){
+            const seasonsList=document.getElementById('seasons-list');
+            const episodesList=document.getElementById('episodes-list');
+            const isVisible=seasonsList.style.display==='block';
+            seasonsList.style.display=isVisible?'none':'block';
+            episodesList.style.display='none';
+        }
+        function showEpisodes(season){
+            const episodesList=document.getElementById('episodes-list');
+            episodesList.style.display='block';
+            episodesList.innerHTML='';
+            const episodes={
+                season1:[
+                    {title:'Episódio 1',description:'Michael Scofield, um engenheiro estrutural brilhante, se envolve em um plano audacioso para resgatar seu irmão, Lincoln Burrows, que está no corredor da morte por um crime que ele afirma não ter cometido. Determinado a provar a inocência de Lincoln, Michael se deixa prender na penitenciária de Fox River, onde começa a executar seu complexo plano de fuga.',video:'C:/Users/Marques/Desktop/mlix/filmes/ação/BDBYSATOFM.mp4'},
+                    {title:'Episódio 2',description:'Enquanto Michael continua a elaborar seu plano de fuga, ele percebe que precisará de aliados dentro da prisão para ter sucesso. Enquanto isso, fora de Fox River, Veronica, a advogada de Lincoln, começa a investigar as evidências que condenaram seu cliente, encontrando inconsistências que a levam a acreditar que há mais no caso do que aparenta.',video:'C:/Users/Marques/Desktop/mlix/filmes/ação/BDBYSATOFM.mp4'}
+                ],
+                season2:[
+                    {title:'Episódio 3',description:'Descrição do episódio 1',video:'C:/Users/Marques/Desktop/mlix/filmes/ação/BDBYSATOFM.mp4'},
+                    {title:'Episódio 4',description:'Descrição do episódio 2',video:'C:/Users/Marques/Desktop/mlix/filmes/ação/BDBYSATOFM.mp4'}
+                ]
+            };
+            episodes[season].forEach((episode)=>{
+                const episodeItem=document.createElement('div');
+                episodeItem.classList.add('episode-item');
+                episodeItem.onclick=()=>openPopup(episode.video);
+                episodeItem.innerHTML=`
+                    <div class="episode-thumbnail"><img src="https://seeklogo.com/images/P/prison-break-logo-80D09AE462-seeklogo.com.png"></div>
+                    <div class="episode-details">
+                        <div class="episode-title">${episode.title}</div>
+                        <div class="episode-description">${episode.description}</div>
+                    </div>
+                `;
+                episodesList.appendChild(episodeItem);
+            });
+        }
+        function openPopup(videoSrc){
+            document.getElementById('popup-video').src=videoSrc;
+            document.getElementById('popup-overlay').style.display='flex';
+        }
+        function closePopup(){
+            const popupOverlay=document.getElementById('popup-overlay');
+            popupOverlay.style.display='none';
+            document.getElementById('popup-video').src='';
+        }
+    </script>
+</body>
+</html>
